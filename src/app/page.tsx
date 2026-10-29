@@ -20,6 +20,9 @@ import { TestimonialSection } from '@/components/TestimonialSection'
 import { CompetitionSection } from '@/components/CompetitionSection'
 import { ContactSection } from '@/components/ContactSection'
 
+// Always fetch fresh data — never use cached version
+export const revalidate = 0
+
 export default async function Home() {
   let hero = [], about = [], accomplishments = [], services = [],
       testimonials = [], competitions = [], contact = [],
