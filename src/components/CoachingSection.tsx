@@ -1,6 +1,7 @@
 'use client'
 
 import { Service } from '@/types'
+import React from 'react'
 
 interface CoachingProps {
   data: Service[]
@@ -15,7 +16,7 @@ const placeholderServices: Service[] = [
   { _id: '6', name: 'Group Bootcamp', description: 'Intensive 4-week group challenges run online. High accountability, community support, and live Q&As with Kidus.', slug: { current: 'group-bootcamp' } },
 ]
 
-const icons: Record<string, JSX.Element> = {
+const icons: Record<string, React.ReactNode> = {
   'online-coaching': (
     <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
       <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
