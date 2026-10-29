@@ -2,10 +2,7 @@ import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 import { Bebas_Neue, Oswald } from 'next/font/google'
 import './globals.css'
-import { Navbar } from '@/components/Navbar'
-import { Footer } from '@/components/Footer'
-import { ScrollAnimator } from '@/components/ScrollAnimator'
-import { BackToTop } from '@/components/BackToTop'
+import { SiteShell } from '@/components/SiteShell'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -43,11 +40,9 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="dark" className={`${geistSans.variable} ${geistMono.variable} ${bebasNeue.variable} ${oswald.variable}`}>
       <body className="min-h-screen flex flex-col">
-        <Navbar />
-        <ScrollAnimator />
-        {children}
-        <Footer />
-        <BackToTop />
+        <SiteShell>
+          {children}
+        </SiteShell>
       </body>
     </html>
   )
