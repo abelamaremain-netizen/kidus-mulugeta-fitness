@@ -1,5 +1,4 @@
 'use client'
-'use client'
 
 import { Service } from '@/types'
 import React from 'react'
