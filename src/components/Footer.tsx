@@ -59,9 +59,6 @@ export function Footer() {
           <p className="text-xs" style={{ color: '#555' }}>
             © 2026 <span style={{ color: 'var(--gold)' }}>Kidus Mulugeta</span>. All rights reserved.
           </p>
-          <div className="text-xs px-3 py-1" style={{ color: '#555', background: '#1A1A1A' }}>
-            Built with Next.js + Sanity.io
-          </div>
         </div>
       </div>
     </footer>

@@ -41,15 +41,15 @@ const placeholderTransformations: Transformation[] = [
 ]
 
 const placeholderBefore = [
-  'https://images.unsplash.com/photo-1609899464726-209d74958e3d?w=400&h=550&fit=crop&q=80',
   'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=550&fit=crop&q=80',
   'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=400&h=550&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=550&fit=crop&q=80',
 ]
 
 const placeholderAfter = [
   'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400&h=550&fit=crop&q=80',
-  'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=550&fit=crop&q=80',
   'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=400&h=550&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=400&h=550&fit=crop&q=80',
 ]
 
 export function TransformationSection({ data }: TransformationProps) {
@@ -95,11 +95,13 @@ export function TransformationSection({ data }: TransformationProps) {
             return (
               <div
                 key={item._id}
-                className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center fade-up ${isEven ? '' : 'lg:flex-row-reverse'}`}
-                style={{ direction: isEven ? 'ltr' : 'rtl' }}
+                className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center fade-up"
               >
-                {/* Before / After images */}
-                <div className="flex gap-3" style={{ direction: 'ltr' }}>
+                {/* Images — swap order on even rows using CSS order */}
+                <div
+                  className="flex gap-3"
+                  style={{ order: isEven ? 0 : 1 }}
+                >
                   {/* Before */}
                   <div className="flex-1 relative">
                     <div className="relative overflow-hidden" style={{ aspectRatio: '3/4' }}>
@@ -143,7 +145,7 @@ export function TransformationSection({ data }: TransformationProps) {
                 </div>
 
                 {/* Text */}
-                <div style={{ direction: 'ltr' }}>
+                <div style={{ order: isEven ? 1 : 0 }}>
                   {/* Stats row */}
                   <div className="flex gap-6 mb-8">
                     <div>

@@ -2,10 +2,22 @@
 
 export function NutritionPromo() {
   const plans = [
-    { name: '🔥 Shred & Cut Plan', price: '$49' },
-    { name: '💪 Lean Bulk Plan', price: '$49' },
-    { name: '🏆 Competition Prep', price: '$99' },
-    { name: '⚡ Full Custom Plan', price: '$149' },
+    {
+      name: 'Shred & Cut Plan', price: '$49',
+      icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9V8h2v8zm4 0h-2V8h2v8z"/></svg>,
+    },
+    {
+      name: 'Lean Bulk Plan', price: '$49',
+      icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M6 4v6a6 6 0 0012 0V4M4 4h16"/></svg>,
+    },
+    {
+      name: 'Competition Prep', price: '$99',
+      icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M8 21h8M12 17v4M17 3H7l-2 7h14L17 3zM5 10s0 5 7 5 7-5 7-5"/></svg>,
+    },
+    {
+      name: 'Full Custom Plan', price: '$149',
+      icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>,
+    },
   ]
 
   const features = [
@@ -110,9 +122,10 @@ export function NutritionPromo() {
                   style={{ borderBottom: '1px solid rgba(255,255,255,0.1)' }}
                 >
                   <span
-                    className="text-sm font-medium"
+                    className="flex items-center gap-3 text-sm font-medium"
                     style={{ color: '#FFFFFF', fontFamily: 'var(--font-heading)' }}
                   >
+                    <span style={{ color: 'var(--gold)' }}>{plan.icon}</span>
                     {plan.name}
                   </span>
                   <span
