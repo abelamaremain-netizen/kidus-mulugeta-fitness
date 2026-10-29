@@ -22,6 +22,12 @@ const placeholderGalleries: Gallery[] = [
       { image: { asset: { _ref: '' } }, caption: 'East Africa Open 2022', year: '2022' },
       { image: { asset: { _ref: '' } }, caption: 'Ethiopian National Championship 2022', year: '2022' },
       { image: { asset: { _ref: '' } }, caption: 'African Championships 2021', year: '2021' },
+      { image: { asset: { _ref: '' } }, caption: 'Training Session', year: '2024' },
+      { image: { asset: { _ref: '' } }, caption: 'Backstage Prep', year: '2023' },
+      { image: { asset: { _ref: '' } }, caption: 'Morning Workout', year: '2024' },
+      { image: { asset: { _ref: '' } }, caption: 'Posing Practice', year: '2023' },
+      { image: { asset: { _ref: '' } }, caption: 'Stage Ready', year: '2024' },
+      { image: { asset: { _ref: '' } }, caption: 'Peak Week', year: '2023' },
     ],
   },
 ]
@@ -33,6 +39,12 @@ const placeholderUrls = [
   'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=600&h=750&fit=crop&q=80',
   'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=600&h=750&fit=crop&q=80',
   'https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=600&h=750&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=600&h=750&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=600&h=750&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1532029837206-abbe2b7620e3?w=600&h=750&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1549060279-7e168fcee0c2?w=600&h=750&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1605296867304-46d5465a13f1?w=600&h=750&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1552674605-db6ffd4facb5?w=600&h=750&fit=crop&q=80',
 ]
 
 const categories = ['all', 'competition', 'training', 'lifestyle', 'stage']
@@ -207,20 +219,25 @@ export function GallerySection({ data }: GalleryProps) {
       </div>
 
       {/* Full-width masonry grid */}
-      <div className="px-4 md:px-6">
-        <div className="columns-2 sm:columns-3 md:columns-4 lg:columns-5 gap-2 space-y-2">
+      <div className="px-4 md:px-8">
+        <div
+          className="grid gap-2"
+          style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))' }}
+        >
           {filtered.map(({ photo, url }, index) => (
             <div
               key={index}
-              className="break-inside-avoid relative overflow-hidden cursor-pointer group"
+              className="relative overflow-hidden cursor-pointer group"
               onClick={() => openLightbox(photo, url, index)}
             >
-              <img
-                src={url}
-                alt={photo.caption ?? 'Kidus Mulugeta'}
-                className="w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                loading="lazy"
-              />
+              <div style={{ aspectRatio: '3/4' }}>
+                <img
+                  src={url}
+                  alt={photo.caption ?? 'Kidus Mulugeta'}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  loading="lazy"
+                />
+              </div>
               {/* Hover overlay */}
               <div
                 className="absolute inset-0 flex flex-col justify-end p-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300"

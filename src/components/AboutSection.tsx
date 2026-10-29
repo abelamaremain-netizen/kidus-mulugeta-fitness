@@ -11,6 +11,11 @@ const placeholderAdditional = [
   'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=400&h=500&fit=crop&q=80',
   'https://images.unsplash.com/photo-1526506118085-60ce8714f8c5?w=400&h=500&fit=crop&q=80',
   'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=400&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=400&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=400&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1540497077202-7c8a3999166f?w=400&h=500&fit=crop&q=80',
+  'https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=400&h=500&fit=crop&q=80',
 ]
 
 export function AboutSection({ data }: AboutProps) {
@@ -134,7 +139,7 @@ export function AboutSection({ data }: AboutProps) {
                 More Photos
               </span>
             </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 xl:grid-cols-6 gap-2">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
               {additionalPhotos.map((url, i) => (
                 <div
                   key={i}
