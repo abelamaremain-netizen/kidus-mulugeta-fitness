@@ -1,7 +1,6 @@
 'use client'
 
 import { Service } from '@/types'
-import React from 'react'
 
 interface CoachingProps {
   data: Service[]
@@ -16,37 +15,16 @@ const placeholderServices: Service[] = [
   { _id: '6', name: 'Group Bootcamp', description: 'Intensive 4-week group challenges run online. High accountability, community support, and live Q&As with Kidus.', slug: { current: 'group-bootcamp' } },
 ]
 
-const icons: Record<string, React.ReactNode> = {
-  'online-coaching': (
-    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/>
-    </svg>
-  ),
-  'competition-prep': (
-    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 2a5 5 0 100 10A5 5 0 0012 2zm-8 18c0-4 3.6-7 8-7s8 3 8 7"/>
-    </svg>
-  ),
-  'nutrition-coaching': (
-    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M4 6h16M4 12h16M4 18h10"/>
-    </svg>
-  ),
-  'training-programs': (
-    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/>
-    </svg>
-  ),
-  'posing-masterclass': (
-    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
-    </svg>
-  ),
-  'group-bootcamp': (
-    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
-    </svg>
-  ),
+function ServiceIcon({ slug }: { slug: string }) {
+  const props = { viewBox: '0 0 24 24', width: 22, height: 22, fill: 'none', stroke: 'currentColor', strokeWidth: 1.5, strokeLinecap: 'round' as const, strokeLinejoin: 'round' as const }
+
+  if (slug === 'competition-prep') return <svg {...props}><path d="M12 2a5 5 0 100 10A5 5 0 0012 2zm-8 18c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+  if (slug === 'nutrition-coaching') return <svg {...props}><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+  if (slug === 'training-programs') return <svg {...props}><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg>
+  if (slug === 'posing-masterclass') return <svg {...props}><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+  if (slug === 'group-bootcamp') return <svg {...props}><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2M9 11a4 4 0 100-8 4 4 0 000 8zM23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+  // default: online-coaching
+  return <svg {...props}><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
 }
 
 export function CoachingSection({ data }: CoachingProps) {
@@ -55,8 +33,6 @@ export function CoachingSection({ data }: CoachingProps) {
   return (
     <section id="coaching" className="py-28" style={{ background: 'var(--bg)' }}>
       <div className="max-w-6xl mx-auto px-6">
-
-        {/* Header */}
         <div className="mb-16">
           <span className="block text-xs font-bold tracking-[4px] uppercase mb-3" style={{ color: 'var(--gold)' }}>
             Work With Kidus
@@ -70,13 +46,12 @@ export function CoachingSection({ data }: CoachingProps) {
           </p>
         </div>
 
-        {/* Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
           {items.map((service) => (
             <article
               key={service._id}
-              className="p-9 border-b-[3px] border-b-transparent transition-all duration-300 group cursor-pointer"
-              style={{ background: 'var(--card)', border: '1px solid var(--border)' }}
+              className="p-9 transition-all duration-300 cursor-pointer"
+              style={{ background: 'var(--card)', border: '1px solid var(--border)', borderBottom: '3px solid transparent' }}
               onMouseEnter={e => {
                 e.currentTarget.style.borderBottomColor = 'var(--gold)'
                 e.currentTarget.style.transform = 'translateY(-5px)'
@@ -88,29 +63,19 @@ export function CoachingSection({ data }: CoachingProps) {
                 e.currentTarget.style.boxShadow = 'none'
               }}
             >
-              {/* Icon */}
               <div
-                className="w-13 h-13 flex items-center justify-center mb-6 transition-all duration-300"
-                style={{
-                  width: '52px', height: '52px',
-                  background: 'var(--bg-alt)',
-                  border: '1px solid var(--border)',
-                  color: 'var(--gold)',
-                }}
+                className="flex items-center justify-center mb-6"
+                style={{ width: '52px', height: '52px', background: 'var(--bg-alt)', border: '1px solid var(--border)', color: 'var(--gold)' }}
               >
-                {icons[service.slug.current] ?? icons['online-coaching']}
+                <ServiceIcon slug={service.slug.current} />
               </div>
-
               <h3 className="text-lg font-semibold mb-3" style={{ color: 'var(--text)' }}>
                 {service.name}
               </h3>
               <p className="text-sm leading-relaxed mb-6" style={{ color: 'var(--subtle)' }}>
                 {service.description}
               </p>
-              <span
-                className="text-xs font-bold tracking-[3px] uppercase inline-flex items-center gap-2 transition-all duration-200"
-                style={{ color: 'var(--gold)' }}
-              >
+              <span className="text-xs font-bold tracking-[3px] uppercase" style={{ color: 'var(--gold)' }}>
                 Apply Now →
               </span>
             </article>
