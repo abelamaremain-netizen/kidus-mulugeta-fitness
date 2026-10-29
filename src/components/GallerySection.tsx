@@ -204,9 +204,11 @@ export function GallerySection({ data }: GalleryProps) {
             </button>
           ))}
         </div>
+      </div>
 
-        {/* Masonry-style grid */}
-        <div className="columns-2 md:columns-3 lg:columns-4 gap-3 space-y-3">
+      {/* Full-width masonry grid */}
+      <div className="px-4 md:px-6">
+        <div className="columns-2 sm:columns-3 md:columns-4 lg:columns-5 gap-2 space-y-2">
           {filtered.map(({ photo, url }, index) => (
             <div
               key={index}
@@ -240,7 +242,7 @@ export function GallerySection({ data }: GalleryProps) {
         </div>
 
         {filtered.length === 0 && (
-          <div className="text-center py-16" style={{ color: 'var(--subtle)' }}>
+          <div className="text-center py-16 px-6" style={{ color: 'var(--subtle)' }}>
             No photos in this category yet.
           </div>
         )}
