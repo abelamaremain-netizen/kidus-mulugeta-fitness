@@ -80,10 +80,10 @@ export function ContactSection({ data }: ContactProps) {
 
           {/* Info */}
           <div>
-            <span className="block text-xs font-bold tracking-[4px] uppercase mb-3" style={{ color: 'var(--gold)' }}>
+            <span className="block text-xs font-bold tracking-[4px] uppercase mb-3" style={{ color: 'var(--gold)', fontFamily: 'var(--font-heading)' }}>
               Get In Touch
             </span>
-            <h2 className="font-bold leading-none mb-5" style={{ fontSize: 'clamp(40px, 6vw, 72px)', color: 'var(--text)' }}>
+            <h2 className="font-bold leading-none mb-5" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(40px, 6vw, 72px)', color: 'var(--text)' }}>
               Let&apos;s Build<br />Your Best
             </h2>
             <div className="w-14 h-0.5 mb-7" style={{ background: 'var(--gold)' }} />
@@ -113,12 +113,12 @@ export function ContactSection({ data }: ContactProps) {
                 <div key={item.label} className="flex items-start gap-4">
                   <div
                     className="w-11 h-11 flex items-center justify-center flex-shrink-0"
-                    style={{ background: 'var(--card)', border: '1px solid var(--border)', color: 'var(--gold)' }}
+                    style={{ background: 'var(--card)', border: '1px solid var(--border)', color: 'var(--gold)', fontFamily: 'var(--font-heading)' }}
                   >
                     {item.icon}
                   </div>
                   <div>
-                    <div className="text-xs font-bold tracking-widest uppercase mb-1" style={{ color: 'var(--gold)' }}>{item.label}</div>
+                    <div className="text-xs font-bold tracking-widest uppercase mb-1" style={{ color: 'var(--gold)', fontFamily: 'var(--font-heading)' }}>{item.label}</div>
                     <div className="text-sm" style={{ color: 'var(--muted)' }}>{item.value}</div>
                   </div>
                 </div>
@@ -149,27 +149,27 @@ export function ContactSection({ data }: ContactProps) {
           <form onSubmit={handleSubmit} noValidate>
             <div className="grid grid-cols-2 gap-4 mb-4">
               <div>
-                <label className="block text-xs font-bold tracking-widest uppercase mb-2" style={{ color: 'var(--gold)' }}>First Name</label>
+                <label className="block text-xs font-bold tracking-widest uppercase mb-2" style={{ color: 'var(--gold)', fontFamily: 'var(--font-heading)' }}>First Name</label>
                 <input type="text" placeholder="John" required style={inputStyle} />
               </div>
               <div>
-                <label className="block text-xs font-bold tracking-widest uppercase mb-2" style={{ color: 'var(--gold)' }}>Last Name</label>
+                <label className="block text-xs font-bold tracking-widest uppercase mb-2" style={{ color: 'var(--gold)', fontFamily: 'var(--font-heading)' }}>Last Name</label>
                 <input type="text" placeholder="Doe" required style={inputStyle} />
               </div>
             </div>
             <div className="mb-4">
-              <label className="block text-xs font-bold tracking-widest uppercase mb-2" style={{ color: 'var(--gold)' }}>Email</label>
+              <label className="block text-xs font-bold tracking-widest uppercase mb-2" style={{ color: 'var(--gold)', fontFamily: 'var(--font-heading)' }}>Email</label>
               <input type="email" placeholder="john@example.com" required style={inputStyle} />
             </div>
             <div className="mb-4">
-              <label className="block text-xs font-bold tracking-widest uppercase mb-2" style={{ color: 'var(--gold)' }}>I&apos;m Interested In</label>
+              <label className="block text-xs font-bold tracking-widest uppercase mb-2" style={{ color: 'var(--gold)', fontFamily: 'var(--font-heading)' }}>I&apos;m Interested In</label>
               <select required style={inputStyle}>
                 <option value="" disabled>Select a service</option>
                 {services.map((s) => <option key={s}>{s}</option>)}
               </select>
             </div>
             <div className="mb-6">
-              <label className="block text-xs font-bold tracking-widest uppercase mb-2" style={{ color: 'var(--gold)' }}>Your Goals</label>
+              <label className="block text-xs font-bold tracking-widest uppercase mb-2" style={{ color: 'var(--gold)', fontFamily: 'var(--font-heading)' }}>Your Goals</label>
               <textarea
                 placeholder="Where are you now? Where do you want to be?"
                 required

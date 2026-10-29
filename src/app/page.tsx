@@ -2,6 +2,7 @@ import { getHero, getAbout, getAccomplishment, getService, getTestimonial, getCo
 import { HeroSection } from '@/components/HeroSection'
 import { AboutSection } from '@/components/AboutSection'
 import { AccomplishmentSection } from '@/components/AccomplishmentSection'
+import { NutritionPromo } from '@/components/NutritionPromo'
 import { CoachingSection } from '@/components/CoachingSection'
 import { TestimonialSection } from '@/components/TestimonialSection'
 import { CompetitionSection } from '@/components/CompetitionSection'
@@ -25,6 +26,7 @@ export default async function Home() {
       <HeroSection data={hero[0] ?? null} />
       <AboutSection data={about[0] ?? null} />
       <AccomplishmentSection data={accomplishments} />
+      <NutritionPromo />
       <CoachingSection data={services} />
       <TestimonialSection data={testimonials} />
       <CompetitionSection data={competitions} />

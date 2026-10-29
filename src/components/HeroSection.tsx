@@ -51,8 +51,8 @@ export function HeroSection({ data }: HeroProps) {
       <div className="relative z-10 max-w-6xl mx-auto px-6 w-full flex flex-col justify-center pt-[calc(72px+60px)] pb-24">
         {/* Tag */}
         <div
-          className="inline-block self-start px-3 py-1 text-xs font-bold tracking-widest uppercase mb-6"
-          style={{ background: 'var(--gold)', color: '#0A0A0A' }}
+          className="inline-block self-start px-3 py-1 text-xs font-bold tracking-widest uppercase mb-6 fade-up"
+          style={{ background: 'var(--gold)', color: '#0A0A0A', fontFamily: 'var(--font-heading)' }}
         >
           IFBB Pro · Ethiopia&apos;s Champion
         </div>
@@ -61,7 +61,7 @@ export function HeroSection({ data }: HeroProps) {
         <h1
           className="font-bold leading-none mb-2 text-white"
           style={{
-            fontFamily: 'var(--font-geist-sans)',
+            fontFamily: 'var(--font-display)',
             fontSize: 'clamp(64px, 11vw, 136px)',
             lineHeight: 0.92,
             letterSpacing: '2px',

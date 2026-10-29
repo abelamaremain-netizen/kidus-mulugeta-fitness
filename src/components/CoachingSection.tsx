@@ -34,10 +34,10 @@ export function CoachingSection({ data }: CoachingProps) {
     <section id="coaching" className="py-28" style={{ background: 'var(--bg)' }}>
       <div className="max-w-6xl mx-auto px-6">
         <div className="mb-16">
-          <span className="block text-xs font-bold tracking-[4px] uppercase mb-3" style={{ color: 'var(--gold)' }}>
+          <span className="block text-xs font-bold tracking-[4px] uppercase mb-3" style={{ color: 'var(--gold)', fontFamily: 'var(--font-heading)' }}>
             Work With Kidus
           </span>
-          <h2 className="font-bold leading-none mb-5" style={{ fontSize: 'clamp(40px, 6vw, 72px)', color: 'var(--text)' }}>
+          <h2 className="font-bold leading-none mb-5" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(40px, 6vw, 72px)', color: 'var(--text)' }}>
             Coaching<br />Services
           </h2>
           <div className="w-14 h-0.5 mb-5" style={{ background: 'var(--gold)' }} />
@@ -65,7 +65,7 @@ export function CoachingSection({ data }: CoachingProps) {
             >
               <div
                 className="flex items-center justify-center mb-6"
-                style={{ width: '52px', height: '52px', background: 'var(--bg-alt)', border: '1px solid var(--border)', color: 'var(--gold)' }}
+                style={{ width: '52px', height: '52px', background: 'var(--bg-alt)', border: '1px solid var(--border)', color: 'var(--gold)', fontFamily: 'var(--font-heading)' }}
               >
                 <ServiceIcon slug={service.slug.current} />
               </div>
@@ -75,7 +75,7 @@ export function CoachingSection({ data }: CoachingProps) {
               <p className="text-sm leading-relaxed mb-6" style={{ color: 'var(--subtle)' }}>
                 {service.description}
               </p>
-              <span className="text-xs font-bold tracking-[3px] uppercase" style={{ color: 'var(--gold)' }}>
+              <span className="text-xs font-bold tracking-[3px] uppercase" style={{ color: 'var(--gold)', fontFamily: 'var(--font-heading)' }}>
                 Apply Now →
               </span>
             </article>

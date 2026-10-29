@@ -37,10 +37,10 @@ export function AccomplishmentSection({ data }: AccomplishmentProps) {
 
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="block text-xs font-bold tracking-[4px] uppercase mb-3" style={{ color: 'var(--gold)' }}>
+          <span className="block text-xs font-bold tracking-[4px] uppercase mb-3" style={{ color: 'var(--gold)', fontFamily: 'var(--font-heading)' }}>
             Trophy Case
           </span>
-          <h2 className="font-bold leading-none mb-5" style={{ fontSize: 'clamp(40px, 6vw, 72px)', color: 'var(--text)' }}>
+          <h2 className="font-bold leading-none mb-5" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(40px, 6vw, 72px)', color: 'var(--text)' }}>
             Accomplishments
           </h2>
           <div className="w-14 h-0.5 mx-auto mb-5" style={{ background: 'var(--gold)' }} />
@@ -62,7 +62,7 @@ export function AccomplishmentSection({ data }: AccomplishmentProps) {
                 className="absolute top-0 left-0 w-[3px] h-0 group-hover:h-full transition-all duration-500"
                 style={{ background: 'var(--gold)' }}
               />
-              <div className="text-xs tracking-[3px] font-bold mb-2" style={{ color: 'var(--gold)' }}>
+              <div className="text-xs tracking-[3px] font-bold mb-2" style={{ color: 'var(--gold)', fontFamily: 'var(--font-heading)' }}>
                 {item.year}
               </div>
               <h3 className="text-lg font-semibold mb-1" style={{ color: 'var(--text)' }}>
@@ -89,7 +89,7 @@ export function AccomplishmentSection({ data }: AccomplishmentProps) {
               className="py-10 text-center transition-all duration-300 border-t-[3px] border-transparent hover:border-t-[color:var(--gold)]"
               style={{ background: 'var(--card)', border: '1px solid var(--border)' }}
             >
-              <div className="font-bold leading-none mb-2" style={{ fontSize: '54px', color: 'var(--gold)' }}>
+              <div className="font-bold leading-none mb-2" style={{ fontSize: '54px', color: 'var(--gold)', fontFamily: 'var(--font-heading)' }}>
                 {stat.value}
               </div>
               <div className="text-xs tracking-widest uppercase" style={{ color: 'var(--subtle)' }}>

@@ -59,13 +59,13 @@ export function AboutSection({ data }: AboutProps) {
           <div>
             <span
               className="block text-xs font-bold tracking-[4px] uppercase mb-3"
-              style={{ color: 'var(--gold)' }}
+              style={{ color: 'var(--gold)', fontFamily: 'var(--font-heading)' }}
             >
               The Story
             </span>
             <h2
               className="font-bold leading-none mb-5"
-              style={{ fontSize: 'clamp(40px, 6vw, 72px)', color: 'var(--text)' }}
+              style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(40px, 6vw, 72px)', color: 'var(--text)' }}
             >
               Who Is Kidus?
             </h2>

@@ -36,10 +36,10 @@ export function TestimonialSection({ data }: TestimonialProps) {
 
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="block text-xs font-bold tracking-[4px] uppercase mb-3" style={{ color: 'var(--gold)' }}>
+          <span className="block text-xs font-bold tracking-[4px] uppercase mb-3" style={{ color: 'var(--gold)', fontFamily: 'var(--font-heading)' }}>
             Client Results
           </span>
-          <h2 className="font-bold leading-none mb-5" style={{ fontSize: 'clamp(40px, 6vw, 72px)', color: 'var(--text)' }}>
+          <h2 className="font-bold leading-none mb-5" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(40px, 6vw, 72px)', color: 'var(--text)' }}>
             What They Say
           </h2>
           <div className="w-14 h-0.5 mx-auto mb-5" style={{ background: 'var(--gold)' }} />

@@ -45,10 +45,10 @@ export function CompetitionSection({ data }: CompetitionProps) {
 
         {/* Header */}
         <div className="mb-16">
-          <span className="block text-xs font-bold tracking-[4px] uppercase mb-3" style={{ color: 'var(--gold)' }}>
+          <span className="block text-xs font-bold tracking-[4px] uppercase mb-3" style={{ color: 'var(--gold)', fontFamily: 'var(--font-heading)' }}>
             Career Timeline
           </span>
-          <h2 className="font-bold leading-none mb-5" style={{ fontSize: 'clamp(40px, 6vw, 72px)', color: 'var(--text)' }}>
+          <h2 className="font-bold leading-none mb-5" style={{ fontFamily: 'var(--font-display)', fontSize: 'clamp(40px, 6vw, 72px)', color: 'var(--text)' }}>
             Competition History
           </h2>
           <div className="w-14 h-0.5" style={{ background: 'var(--gold)' }} />
@@ -63,7 +63,7 @@ export function CompetitionSection({ data }: CompetitionProps) {
                   <th
                     key={h}
                     className="text-left px-5 py-4 text-xs font-bold tracking-[3px] uppercase"
-                    style={{ color: 'var(--gold)' }}
+                    style={{ color: 'var(--gold)', fontFamily: 'var(--font-heading)' }}
                   >
                     {h}
                   </th>
