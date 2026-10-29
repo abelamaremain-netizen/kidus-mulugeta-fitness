@@ -35,7 +35,7 @@ export interface Service {
   _id: string
   name: string
   description: string
-  slug: { current: string }
+  slug?: { current: string }
   image?: SanityImage
   price?: string
 }

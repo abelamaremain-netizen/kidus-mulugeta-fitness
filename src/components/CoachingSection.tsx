@@ -25,7 +25,7 @@ const placeholderImages = [
   'https://images.unsplash.com/photo-1581009146145-b5ef050c2e1e?w=600&h=400&fit=crop&q=80',
 ]
 
-function ServiceIcon({ slug }: { slug: string }) {
+function ServiceIcon({ slug }: { slug?: string }) {
   const props = {
     viewBox: '0 0 24 24', width: 22, height: 22, fill: 'none',
     stroke: 'currentColor', strokeWidth: 1.5,
@@ -114,7 +114,7 @@ export function CoachingSection({ data }: CoachingProps) {
                       color: '#0A0A0A',
                     }}
                   >
-                    <ServiceIcon slug={service.slug.current} />
+                    <ServiceIcon slug={service.slug?.current} />
                   </div>
                   {/* Price badge */}
                   {service.price && (
