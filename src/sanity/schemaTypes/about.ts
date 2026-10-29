@@ -21,12 +21,33 @@ export default {
       options: { hotspot: true },
     },
     {
+      name: 'additionalImages',
+      title: 'Additional Photos',
+      type: 'array',
+      description: 'Extra training/lifestyle photos shown in the about section collage',
+      of: [
+        {
+          type: 'object',
+          fields: [
+            {
+              name: 'image',
+              title: 'Image',
+              type: 'image',
+              options: { hotspot: true },
+            },
+            {
+              name: 'caption',
+              title: 'Caption',
+              type: 'string',
+            },
+          ],
+        },
+      ],
+    },
+    {
       name: 'yearsExperience',
       title: 'Years Experience',
       type: 'number',
-      options: {
-        hotspot: true
-      }
     },
   ],
 }

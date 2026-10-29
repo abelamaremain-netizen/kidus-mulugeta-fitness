@@ -1,10 +1,15 @@
+// Shared image type
+export interface SanityImage {
+  asset: { _ref: string }
+}
+
 export interface Testimonial {
   _id: string
   quote: string
   authorName: string
   authorLocation: string
   rating: number
-  avatar?: { asset: { _ref: string } }
+  avatar?: SanityImage
 }
 
 export interface Accomplishment {
@@ -23,6 +28,7 @@ export interface Competition {
   location: string
   division: string
   placement: string
+  photo?: SanityImage
 }
 
 export interface Service {
@@ -30,6 +36,8 @@ export interface Service {
   name: string
   description: string
   slug: { current: string }
+  image?: SanityImage
+  price?: string
 }
 
 export interface Hero {
@@ -40,14 +48,20 @@ export interface Hero {
   yearsPro: number
   clientsCoached: number
   nationalTitles: number
-  backgroundImage?: { asset: { _ref: string } }
+  backgroundImage?: SanityImage
+}
+
+export interface AboutPhoto {
+  image: SanityImage
+  caption?: string
 }
 
 export interface About {
   _id: string
   bio: string
   credentials: string[]
-  profileImage?: { asset: { _ref: string } }
+  profileImage?: SanityImage
+  additionalImages?: AboutPhoto[]
   yearsExperience: number
 }
 
@@ -59,4 +73,28 @@ export interface Contact {
   instagramUrl?: string
   tiktokUrl?: string
   youtubeUrl?: string
+}
+
+export interface GalleryPhoto {
+  image: SanityImage
+  caption?: string
+  year?: string
+}
+
+export interface Gallery {
+  _id: string
+  title: string
+  category: 'competition' | 'training' | 'lifestyle' | 'stage'
+  photos: GalleryPhoto[]
+}
+
+export interface Transformation {
+  _id: string
+  clientName: string
+  duration: string
+  weightLost: string
+  beforeImage: SanityImage
+  afterImage: SanityImage
+  quote?: string
+  service?: string
 }
