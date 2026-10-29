@@ -15,7 +15,8 @@ const placeholderData: Accomplishment[] = [
   { _id: '6', year: '2021', title: 'Ethiopian National Championship', event: "Men's Open", location: 'Addis Ababa, Ethiopia', placement: '1st Place' },
 ]
 
-function placementStyle(placement: string) {
+function placementStyle(placement: string | null | undefined) {
+  if (!placement) return { background: 'var(--border)', color: 'var(--text)' }
   if (placement.includes('1st')) return { background: 'var(--gold)', color: '#0A0A0A' }
   if (placement.includes('2nd')) return { background: '#999999', color: '#0A0A0A' }
   return { background: '#8B5C2A', color: '#FFFFFF' }

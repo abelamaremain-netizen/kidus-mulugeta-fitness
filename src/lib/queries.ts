@@ -55,7 +55,7 @@ export async function getService(): Promise<Service[]> {
   return await client.fetch(
     `*[_type == "service"] | order(_createdAt asc) {
       _id, name, description, price,
-      slug { current },
+      "slug": select(defined(slug.current) => slug, {"current": ""}),
       image { asset { _ref } }
     }`
   )

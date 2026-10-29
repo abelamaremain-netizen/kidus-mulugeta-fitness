@@ -29,8 +29,9 @@ const placeholderPhotos = [
   'https://images.unsplash.com/photo-1574680096145-d05b474e2155?w=400&h=500&fit=crop&q=80',
 ]
 
-function PlacementBadge({ placement }: { placement: string }) {
+function PlacementBadge({ placement }: { placement: string | null | undefined }) {
   let style = {}
+  if (!placement) return null
   if (placement.includes('1')) style = { background: 'var(--gold)', color: '#0A0A0A' }
   else if (placement.includes('2')) style = { background: '#999', color: '#0A0A0A' }
   else style = { background: '#8B5C2A', color: '#FFF' }
