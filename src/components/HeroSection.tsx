@@ -1,7 +1,6 @@
 'use client'
 
 import { Hero } from '@/types'
-import Image from 'next/image'
 import Link from 'next/link'
 import { urlFor } from '@/sanity/lib/image'
 
@@ -25,16 +24,16 @@ export function HeroSection({ data }: HeroProps) {
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         {data?.backgroundImage?.asset?._ref ? (
-          <Image
-            src={urlFor(data.backgroundImage).width(1600).url()}
-            alt="Kidus Mulugeta"
-            fill
-            className="object-cover object-top"
-            priority
-            style={{ filter: 'brightness(0.55)' }}
+          <div
+            className="absolute inset-0"
+            style={{
+              backgroundImage: `url(${urlFor(data.backgroundImage).width(1600).url()})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center top',
+              filter: 'brightness(0.55)',
+            }}
           />
         ) : (
-          // Fallback gradient when no image uploaded yet
           <div
             className="w-full h-full"
             style={{ background: 'linear-gradient(135deg, #141414 0%, #2A2A2A 100%)' }}

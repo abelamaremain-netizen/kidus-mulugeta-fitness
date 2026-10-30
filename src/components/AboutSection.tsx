@@ -125,39 +125,6 @@ export function AboutSection({ data }: AboutProps) {
           </div>
         </div>
 
-        {/* Bottom: additional photos grid */}
-        {additionalPhotos.length > 0 && (
-          <div className="fade-up">
-            <div
-              className="flex items-center gap-4 mb-6"
-            >
-              <div className="w-8 h-0.5" style={{ background: 'var(--gold)' }} />
-              <span
-                className="text-xs font-bold tracking-[4px] uppercase"
-                style={{ color: 'var(--gold)', fontFamily: 'var(--font-heading)' }}
-              >
-                More Photos
-              </span>
-            </div>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
-              {additionalPhotos.map((url, i) => (
-                <div
-                  key={i}
-                  className="relative overflow-hidden group cursor-pointer"
-                  style={{ aspectRatio: '3/4' }}
-                >
-                  <img
-                    src={url}
-                    alt={`Kidus Mulugeta photo ${i + 1}`}
-                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 border-2 border-transparent group-hover:border-[color:var(--gold)] transition-all duration-300 pointer-events-none" />
-                </div>
-              ))}
-            </div>
-          </div>
-        )}
       </div>
     </section>
   )
