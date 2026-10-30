@@ -8,6 +8,7 @@ import competition from './competition'
 import accomplishment from './accomplishment'
 import gallery from './gallery'
 import transformation from './transformation'
+import mealPlan from './mealPlan'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
   types: [
@@ -20,5 +21,6 @@ export const schema: { types: SchemaTypeDefinition[] } = {
     accomplishment,
     gallery,
     transformation,
+    mealPlan,
   ],
 }

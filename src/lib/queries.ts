@@ -9,6 +9,7 @@ import {
   Contact,
   Gallery,
   Transformation,
+  MealPlan,
 } from '../types/index'
 
 export async function getTestimonial(): Promise<Testimonial[]> {
@@ -44,9 +45,17 @@ export async function getAbout(): Promise<About[]> {
 export async function getHero(): Promise<Hero[]> {
   return await client.fetch(
     `*[_type == "hero"][0..0] {
-      _id, tagLine, description,
+      _id, heroTag, tagLine, description,
       competitionWins, yearsPro, clientsCoached, nationalTitles,
       backgroundImage { asset { _ref } }
+    }`
+  )
+}
+
+export async function getMealPlans(): Promise<MealPlan[]> {
+  return await client.fetch(
+    `*[_type == "mealPlan"] | order(order asc) {
+      _id, name, price, description, order
     }`
   )
 }

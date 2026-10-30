@@ -53,7 +53,7 @@ export function HeroSection({ data }: HeroProps) {
           className="inline-block self-start px-3 py-1 text-xs font-bold tracking-widest uppercase mb-6 fade-up"
           style={{ background: 'var(--gold)', color: '#0A0A0A', fontFamily: 'var(--font-heading)' }}
         >
-          IFBB Pro · Ethiopia&apos;s Champion
+          {data?.heroTag ?? "IFBB Pro · Ethiopia's Champion"}
         </div>
 
         {/* Name */}
@@ -103,15 +103,13 @@ export function HeroSection({ data }: HeroProps) {
             Discover My Story
           </Link>
           <a
-            href="https://kidus-nutrition.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact"
             className="px-9 py-3.5 text-sm font-bold tracking-widest uppercase border-2 transition-all duration-200"
             style={{ borderColor: '#FFF', color: '#FFF', background: 'transparent' }}
             onMouseEnter={e => { e.currentTarget.style.background = '#FFF'; e.currentTarget.style.color = '#0A0A0A' }}
             onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#FFF' }}
           >
-            Get My Nutrition Plans
+            Get A Nutrition Plan
           </a>
         </div>
 

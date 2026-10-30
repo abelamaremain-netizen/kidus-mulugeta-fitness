@@ -3,7 +3,6 @@
 export function Footer() {
   const quickLinks = ['About', 'Achievements', 'Coaching', 'Testimonials', 'Competitions', 'Contact']
   const services = ['Online Coaching', 'Competition Prep', 'Posing Masterclass', 'Group Bootcamp']
-  const nutritionLinks = ['Meal Plans', 'Shred & Cut', 'Lean Bulk', 'Competition Prep', 'Custom Plan']
 
   const linkStyle = { color: '#888' }
   const hoverIn = (e: React.MouseEvent<HTMLAnchorElement>) => (e.currentTarget.style.color = 'var(--gold)')
@@ -15,13 +14,23 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
 
           {/* Brand */}
-          <div>
+          <div className="lg:col-span-2">
             <div className="text-2xl font-bold tracking-widest mb-3" style={{ color: '#F2F2F2' }}>
               KIDUS <span style={{ color: 'var(--gold)' }}>MULUGETA</span>
             </div>
-            <p className="text-sm leading-relaxed max-w-[260px]" style={{ color: '#888' }}>
+            <p className="text-sm leading-relaxed max-w-[360px] mb-6" style={{ color: '#888' }}>
               IFBB Pro Bodybuilder · Certified Nutrition Coach · 3x Ethiopian National Champion.
+              Building champions from the inside out.
             </p>
+            <a
+              href="#contact"
+              className="inline-block px-7 py-3 text-xs font-bold tracking-widest uppercase transition-all duration-200"
+              style={{ background: 'var(--gold)', color: '#0A0A0A' }}
+              onMouseEnter={e => (e.currentTarget.style.background = 'var(--gold-light)')}
+              onMouseLeave={e => (e.currentTarget.style.background = 'var(--gold)')}
+            >
+              Get A Plan →
+            </a>
           </div>
 
           {/* Quick Links */}
@@ -40,20 +49,11 @@ export function Footer() {
               <a key={l} href="#coaching" className="block text-sm mb-2 transition-colors"
                 style={linkStyle} onMouseEnter={hoverIn} onMouseLeave={hoverOut}>{l}</a>
             ))}
-          </div>
-
-          {/* Nutrition */}
-          <div>
-            <h4 className="text-xs font-bold tracking-[3px] uppercase mb-5" style={{ color: '#F2F2F2' }}>Nutrition Site</h4>
-            {nutritionLinks.map((l) => (
-              <a key={l} href="https://kidus-nutrition.com" target="_blank" rel="noopener noreferrer"
-                className="block text-sm mb-2 transition-colors"
-                style={linkStyle} onMouseEnter={hoverIn} onMouseLeave={hoverOut}>{l}</a>
-            ))}
+            <a href="#nutrition" className="block text-sm mb-2 transition-colors mt-4"
+              style={linkStyle} onMouseEnter={hoverIn} onMouseLeave={hoverOut}>Nutrition Plans</a>
           </div>
         </div>
 
-        {/* Bottom */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-3 pt-6"
           style={{ borderTop: '1px solid #222' }}>
           <p className="text-xs" style={{ color: '#555' }}>

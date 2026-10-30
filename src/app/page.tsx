@@ -8,6 +8,7 @@ import {
   getContact,
   getGalleries,
   getTransformations,
+  getMealPlans,
 } from '@/lib/queries'
 import { HeroSection } from '@/components/HeroSection'
 import { AboutSection } from '@/components/AboutSection'
@@ -26,11 +27,11 @@ export const revalidate = 0
 export default async function Home() {
   let hero = [], about = [], accomplishments = [], services = [],
       testimonials = [], competitions = [], contact = [],
-      galleries = [], transformations = []
+      galleries = [], transformations = [], mealPlans = []
 
   try {
     ;[hero, about, accomplishments, services, testimonials,
-      competitions, contact, galleries, transformations] =
+      competitions, contact, galleries, transformations, mealPlans] =
       await Promise.all([
         getHero(),
         getAbout(),
@@ -41,6 +42,7 @@ export default async function Home() {
         getContact(),
         getGalleries(),
         getTransformations(),
+        getMealPlans(),
       ])
   } catch (err) {
     console.error('Sanity fetch failed — using placeholder data', err)
@@ -52,7 +54,7 @@ export default async function Home() {
       <AboutSection data={about[0] ?? null} />
       <AccomplishmentSection data={accomplishments} />
       <GallerySection data={galleries} />
-      <NutritionPromo />
+      <NutritionPromo data={mealPlans} />
       <CoachingSection data={services} />
       <TransformationSection data={transformations} />
       <TestimonialSection data={testimonials} />

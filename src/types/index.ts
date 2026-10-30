@@ -42,6 +42,7 @@ export interface Service {
 
 export interface Hero {
   _id: string
+  heroTag?: string
   tagLine: string
   description: string
   competitionWins: number
@@ -49,6 +50,14 @@ export interface Hero {
   clientsCoached: number
   nationalTitles: number
   backgroundImage?: SanityImage
+}
+
+export interface MealPlan {
+  _id: string
+  name: string
+  price: string
+  description?: string
+  order?: number
 }
 
 export interface AboutPhoto {

@@ -38,7 +38,7 @@ export function Navbar() {
     { href: '#testimonials', label: 'Testimonials' },
     { href: '#contact', label: 'Contact' },
   ]
-
+ 
   return (
     <nav
       className="fixed top-0 left-0 right-0 z-50 h-[72px] transition-all duration-300"
@@ -71,15 +71,13 @@ export function Navbar() {
           ))}
           <li>
             <a
-              href="https://kidus-nutrition.com"
-              target="_blank"
-              rel="noopener noreferrer"
+              href="#contact"
               className="px-4 py-2 text-xs font-bold tracking-widest uppercase transition-all duration-200"
               style={{ background: 'var(--gold)', color: '#0A0A0A' }}
               onMouseEnter={e => (e.currentTarget.style.background = 'var(--gold-light)')}
               onMouseLeave={e => (e.currentTarget.style.background = 'var(--gold)')}
             >
-              Get My Meal Plan
+              Get A Plan
             </a>
           </li>
         </ul>
@@ -145,13 +143,11 @@ export function Navbar() {
             </Link>
           ))}
           <a
-            href="https://kidus-nutrition.com"
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contact"
             className="block mt-4 py-4 text-center text-sm font-bold tracking-widest uppercase"
             style={{ background: 'var(--gold)', color: '#0A0A0A' }}
           >
-            Get My Meal Plan
+            Get A Plan
           </a>
         </div>
       )}
