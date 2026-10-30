@@ -30,7 +30,7 @@ export function HeroSection({ data }: HeroProps) {
               backgroundImage: `url(${urlFor(data.backgroundImage).width(1600).url()})`,
               backgroundSize: 'cover',
               backgroundPosition: 'center 20%',
-              filter: 'brightness(0.55)',
+              filter: 'brightness(0.75)',
             }}
           />
         ) : (
@@ -42,7 +42,7 @@ export function HeroSection({ data }: HeroProps) {
         {/* Overlay */}
         <div
           className="absolute inset-0"
-          style={{ background: 'linear-gradient(to right, rgba(10,10,10,0.85) 40%, rgba(10,10,10,0.1) 100%)' }}
+          style={{ background: 'linear-gradient(to right, rgba(10,10,10,0.75) 35%, rgba(10,10,10,0.05) 100%)' }}
         />
       </div>
 
