@@ -138,12 +138,13 @@ export function CoachingSection({ data }: CoachingProps) {
                   <p className="text-sm leading-relaxed mb-6" style={{ color: 'var(--subtle)' }}>
                     {service.description}
                   </p>
-                  <span
-                    className="text-xs font-bold tracking-[3px] uppercase inline-flex items-center gap-2"
+                  <a
+                    href="#contact"
+                    className="text-xs font-bold tracking-[3px] uppercase inline-flex items-center gap-2 transition-all duration-200 hover:gap-4"
                     style={{ color: 'var(--gold)', fontFamily: 'var(--font-heading)' }}
                   >
                     Apply Now →
-                  </span>
+                  </a>
                 </div>
               </article>
             )
