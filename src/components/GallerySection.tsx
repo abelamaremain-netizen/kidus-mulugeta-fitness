@@ -220,10 +220,7 @@ export function GallerySection({ data }: GalleryProps) {
 
       {/* Full-width masonry grid */}
       <div className="px-4 md:px-8">
-        <div
-          className="grid gap-2"
-          style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(200px, 1fr))' }}
-        >
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-2">
           {filtered.map(({ photo, url }, index) => (
             <div
               key={index}
