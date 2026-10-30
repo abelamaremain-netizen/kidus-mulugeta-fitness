@@ -29,7 +29,7 @@ export function HeroSection({ data }: HeroProps) {
             style={{
               backgroundImage: `url(${urlFor(data.backgroundImage).width(1600).url()})`,
               backgroundSize: 'cover',
-              backgroundPosition: 'center top',
+              backgroundPosition: 'center 20%',
               filter: 'brightness(0.55)',
             }}
           />
