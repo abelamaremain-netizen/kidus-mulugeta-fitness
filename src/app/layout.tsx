@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import { Bebas_Neue, Oswald } from 'next/font/google'
 import './globals.css'
 import { SiteShell } from '@/components/SiteShell'
+import { JsonLd } from '@/components/JsonLd'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -27,9 +28,54 @@ const oswald = Oswald({
 })
 
 export const metadata: Metadata = {
-  title: 'Kidus Mulugeta | Elite Bodybuilder & Coach',
+  title: 'Kidus Mulugeta | IFBB Pro Bodybuilder & Coach — Ethiopia',
   description:
-    'IFBB Pro bodybuilder, 3x Ethiopian National Champion, certified nutrition coach. Explore coaching services and nutrition plans.',
+    'Kidus Mulugeta is Ethiopia\'s most decorated IFBB Pro bodybuilder and 3x National Champion. Offering online coaching, competition prep, posing masterclass and personalised nutrition plans worldwide.',
+  keywords: [
+    'Kidus Mulugeta',
+    'Ethiopian bodybuilder',
+    'IFBB Pro Ethiopia',
+    'bodybuilding coach Ethiopia',
+    'online bodybuilding coach',
+    'competition prep coach',
+    'nutrition coach Ethiopia',
+    'Ethiopian National Champion bodybuilding',
+  ],
+  authors: [{ name: 'Kidus Mulugeta' }],
+  creator: 'Kidus Mulugeta',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://kidus-mulugeta-fitness.vercel.app',
+    siteName: 'Kidus Mulugeta',
+    title: 'Kidus Mulugeta | IFBB Pro Bodybuilder & Coach — Ethiopia',
+    description:
+      'Ethiopia\'s most decorated IFBB Pro bodybuilder. 3x National Champion. Online coaching, competition prep and personalised nutrition plans worldwide.',
+    images: [
+      {
+        url: 'https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=1200&h=630&fit=crop&q=85',
+        width: 1200,
+        height: 630,
+        alt: 'Kidus Mulugeta — IFBB Pro Bodybuilder',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Kidus Mulugeta | IFBB Pro Bodybuilder & Coach',
+    description: 'Ethiopia\'s most decorated IFBB Pro bodybuilder. Online coaching & nutrition plans.',
+    images: ['https://images.unsplash.com/photo-1583454110551-21f2fa2afe61?w=1200&h=630&fit=crop&q=85'],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 }
 
 export default function RootLayout({
@@ -40,6 +86,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="dark" className={`${geistSans.variable} ${geistMono.variable} ${bebasNeue.variable} ${oswald.variable}`}>
       <body className="min-h-screen flex flex-col">
+        <JsonLd />
         <SiteShell>
           {children}
         </SiteShell>
